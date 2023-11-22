@@ -1,0 +1,71 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Dam"
+        xmlns:PersianDateControls="clr-namespace:Arash.PersianDateControls;assembly=PersianDateControls" x:Class="Dam.AddSheepMenu"
+        mc:Ignorable="d"
+        Title="AddSheepMenu" Height="450" Width="800" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="Transparent" AllowsTransparency="True" FontFamily="b nazanin" FontSize="20" >
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="Loaded">
+            <BeginStoryboard>
+                <Storyboard Duration="00:00:01" Storyboard.TargetProperty="Opacity">
+                    <DoubleAnimation From="0" To="1"/>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Window.Triggers>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="179*"/>
+            <ColumnDefinition Width="21*"/>
+        </Grid.ColumnDefinitions>
+
+        <Rectangle  HorizontalAlignment="Left" Height="430" Margin="10,10,0,0" RadiusY="10" RadiusX="10" Stroke="#FFA29999" VerticalAlignment="Top" Width="780" Grid.ColumnSpan="2" RenderTransformOrigin="0.573,0.521">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="img\888.png"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle  Height="56" Margin="10,0,10,384" Stroke="#FFCFC7C7" VerticalAlignment="Bottom" RadiusX="10" RadiusY="10" MouseDown="Rectangle_MouseDown" Cursor="Hand"  Grid.ColumnSpan="2">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="img/HeaderBack.png"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Image Source="img/closeicon.png" HorizontalAlignment="Left" Height="15" Margin="34,29,0,0" VerticalAlignment="Top" Width="15" RenderTransformOrigin="-0.708,0.357" MouseDown="Image_MouseDown"/>
+        <Label Content="ثبت دام" FontWeight="ExtraBold"  HorizontalAlignment="Left" Margin="634,20,0,0" VerticalAlignment="Top" Width="126" Grid.ColumnSpan="2"/>
+        <TextBox TabIndex="10" Name="DescriptionTextbox" HorizontalAlignment="Left" Height="157" Margin="62,119,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="259" FontSize="16" FontFamily="B nazanin" FontWeight="Bold" FlowDirection="RightToLeft"/>
+        <PersianDateControls:PersianDatePicker TabIndex="0" Name="BirthdayDatepicker" FontFamily="b koodak" FontSize="12" FontWeight="Light" HorizontalAlignment="Left" Height="40" Margin="595,97,0,0" VerticalAlignment="Top" Width="95"/>
+        <Label FontSize="18" FlowDirection="RightToLeft" Content="تاریخ تولد" HorizontalAlignment="Left" Margin="714,104,0,0" VerticalAlignment="Top" Width="65" Grid.ColumnSpan="2" />
+        <Label FontSize="18" FlowDirection="RightToLeft" Content="تاریخ تحویل" HorizontalAlignment="Left" Margin="696,160,0,0" VerticalAlignment="Top" Width="86" Grid.ColumnSpan="2" />
+        <Label Name="DeathLbl" FontSize="18" FlowDirection="RightToLeft" Content="تاریخ مرگ" HorizontalAlignment="Left" Margin="507,240,0,0" VerticalAlignment="Top" Width="74" RenderTransformOrigin="0.473,0.676" Height="40" />
+        <Label Name="SellLbl" FontSize="18" FlowDirection="RightToLeft" Content="تاریخ فروش" HorizontalAlignment="Left" Margin="500,319,0,0" VerticalAlignment="Top" Width="74" Height="34" />
+        <Label FontSize="18" FlowDirection="RightToLeft" Content="والد" HorizontalAlignment="Left" Margin="509,100,0,0" VerticalAlignment="Top" Width="65" RenderTransformOrigin="0.615,4.622" />
+        <Label FontSize="18" FlowDirection="RightToLeft" Content="توضیحات" HorizontalAlignment="Left" Margin="256,82,0,0" VerticalAlignment="Top" Width="65" />
+        <RadioButton TabIndex="7" Name="Issenioryes" FontSize="18" Content="بلی" HorizontalAlignment="Left" Margin="517,186,0,0" VerticalAlignment="Top" Width="55"/>
+        <RadioButton TabIndex="8" Name="Isseniorno" FontSize="18" Content="خیر" HorizontalAlignment="Left" Margin="431,186,0,0" VerticalAlignment="Top" Width="55" RenderTransformOrigin="0.655,0.857"/>
+
+        <GroupBox FontSize="18" FlowDirection="RightToLeft" Header="فروخته شده است" HorizontalAlignment="Left" Height="61" Margin="613,300,0,0" VerticalAlignment="Top" Width="173" Grid.ColumnSpan="2">
+
+        </GroupBox>
+
+        <GroupBox FontSize="18" FlowDirection="RightToLeft" Header="بالغ است" HorizontalAlignment="Left" Height="65" Margin="396,159,0,0" VerticalAlignment="Top" Width="187"/>
+        <RadioButton TabIndex="4" Name="soldyesradio" GroupName="sale" FontSize="18" Content="بلی" HorizontalAlignment="Left" Margin="706,319,0,0" VerticalAlignment="Top" Width="55" RenderTransformOrigin="0.164,-0.679" Grid.ColumnSpan="2" Click="EnableSellDatetimePicker" Checked="EnableSellDatetimePicker"/>
+        <RadioButton TabIndex="5" Name="soldnoradio" GroupName="sale" Visibility="Visible" FontSize="18" Content="خیر" Margin="628,319,33,0" VerticalAlignment="Top" RenderTransformOrigin="0.891,-1.964" Click="DisableSellDatetimePicker" Checked="DisableSellDatetimePicker"/>
+        <PersianDateControls:PersianDatePicker TabIndex="1" Name="DeliveryDatepicker" FontFamily="b koodak" FontSize="12" FontWeight="Light" Height="40" Margin="592,158,30,0" VerticalAlignment="Top" Width="Auto"/>
+        <PersianDateControls:PersianDatePicker TabIndex="2" Name="DeathDatepicker" FontFamily="b koodak" FontSize="12" FontWeight="Light" HorizontalAlignment="Left" Height="40" Margin="392,240,0,0" VerticalAlignment="Top" Width="94"/>
+        <PersianDateControls:PersianDatePicker TabIndex="3" Name="SoldDatepicker" FontFamily="b koodak" FontSize="12" FontWeight="Light" HorizontalAlignment="Left" Height="40" Margin="392,316,0,0" VerticalAlignment="Top" Width="94"/>
+        <ComboBox TabIndex="9" Name="ParentCombo" HorizontalAlignment="Left" Margin="431,100,0,0" VerticalAlignment="Top" Width="98" Height="37"/>
+        <Button TabIndex="11" Name="Setbtn" Content="ثبت" HorizontalAlignment="Left" Margin="81,313,0,0" VerticalAlignment="Top" Width="186" Height="63" Click="AddSheep">
+
+        </Button>
+        <Image  Source="img\yes.png" HorizontalAlignment="Left" Height="38" Margin="121,323,0,0" MouseDown="AddSheep" VerticalAlignment="Top" Width="40" RenderTransformOrigin="0.725,0.553"/>
+        <Image Source="img/Minimize.png" Stretch="Fill" HorizontalAlignment="Left" Height="15" Margin="62,29,0,0" VerticalAlignment="Top" Width="16" RenderTransformOrigin="-0.708,0.357" MouseDown="Image_MouseDown_1"/>
+        <GroupBox FontSize="18" FlowDirection="RightToLeft" Header="مرده است" HorizontalAlignment="Left" Height="61" Margin="616,219,0,0" VerticalAlignment="Top" Width="170" Grid.ColumnSpan="2"/>
+        <RadioButton TabIndex="4" Name="Isdeadradioyes" GroupName="dead" FontSize="18" Content="بلی" HorizontalAlignment="Left" Margin="713,243,0,0" VerticalAlignment="Top" Width="55" RenderTransformOrigin="0.164,-0.679" Grid.ColumnSpan="2" Click="Enabledeaddatetimepicker" Checked="Enabledeaddatetimepicker" />
+        <RadioButton TabIndex="5" Name="Isdeadradiono" GroupName="dead" Visibility="Visible" FontSize="18" Content="خیر" HorizontalAlignment="Left" Margin="635,243,0,0" VerticalAlignment="Top" Width="55" RenderTransformOrigin="0.891,-1.964" Click="Isdeadradiono_Click" Checked="Isdeadradiono_Click"/>
+        <Button Name="WithoutName"  Content="ندارد" HorizontalAlignment="Left" Margin="379,100,0,0" VerticalAlignment="Top" Width="47" Height="37" Background="#FFFF1515" Click="WithoutName_Click" />
+
+    </Grid>
+</Window>
+

@@ -1,0 +1,46 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Dam"
+        xmlns:PersianDateControls="clr-namespace:Arash.PersianDateControls;assembly=PersianDateControls" x:Class="Dam.AboutUs"
+        mc:Ignorable="d"
+        Title="AboutUs" Height="647" Width="1037" WindowStartupLocation="CenterScreen" WindowStyle="None" Background="Transparent" AllowsTransparency="True" FontFamily="b nazanin" FontSize="20" >
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="Loaded">
+            <BeginStoryboard>
+                <Storyboard Duration="00:00:01" Storyboard.TargetProperty="Opacity">
+                    <DoubleAnimation From="0" To="1"/>
+                </Storyboard>
+            </BeginStoryboard>
+        </EventTrigger>
+    </Window.Triggers>
+    <Grid Margin="10">
+
+
+        <Rectangle  HorizontalAlignment="Left" Height="627" RadiusY="10" RadiusX="10" Stroke="#FFA29999" VerticalAlignment="Top" Width="1017" RenderTransformOrigin="0.573,0.521">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="img\back1.jpg"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Rectangle  Height="56" Margin="0,0,0,571" Stroke="#FFCFC7C7" VerticalAlignment="Bottom" RadiusX="10" RadiusY="10"  Cursor="Hand" RenderTransformOrigin="0.493,0.554" MouseDown="Rectangle_MouseDown">
+            <Rectangle.Fill>
+                <ImageBrush ImageSource="img/222.png"/>
+            </Rectangle.Fill>
+        </Rectangle>
+        <Image Source="img/closeicon.png" HorizontalAlignment="Left" Height="15" Margin="33,20,0,0" VerticalAlignment="Top" Width="15" RenderTransformOrigin="-0.708,0.357" MouseDown="Image_MouseDown" />
+        <Image Source="img/Minimize.png" Stretch="Fill" HorizontalAlignment="Left" Height="15" Margin="67,20,0,0" VerticalAlignment="Top" Width="16" RenderTransformOrigin="-0.708,0.357" MouseDown="Image_MouseDown_1"/>
+        <Label Content="راهنما" FontWeight="ExtraBold"  HorizontalAlignment="Left" Margin="890,10,0,0" VerticalAlignment="Top" Width="102"/>
+        <Label Content="هنگام استفاده از برنامه به نکات زیر توجه فرمایید:  " FlowDirection="RightToLeft" HorizontalAlignment="Left" Margin="691,61,0,0" VerticalAlignment="Top" FontFamily="b nazanin" Width="316" Height="43"/>
+        <Label Content="1. بالغ بودن یا نبودن توسط خود برنامه در هر بار اجرا محاسبه میشود و نیازی به وارد کردن آن نیست. حتی اگر آنرا تغییر دهید باز توسط برنامه درست خواهد شد." FlowDirection="RightToLeft" HorizontalAlignment="Left" Margin="0,109,0,0" VerticalAlignment="Top" FontFamily="b nazanin" Width="1006" Height="43"/>
+        <Label Content="2. هنگام گزارش گیری به این نکته توجه کنید که دام هایی در نتیجه آورده میشوند که تاریخ تحویل آنها در محدوده وارد شده باشد." FlowDirection="RightToLeft" HorizontalAlignment="Left" Margin="1,157,0,0" VerticalAlignment="Top" FontFamily="b nazanin" Width="1006" Height="43"/>
+        <Label Content="3.دام هایی که تاریخ مرگ یا فروش آنها آینده است هزینه شان تا روز مرگ یا فروش حساب خواهد شد .دام های دیگر تا تاریخ روز جاری محاسبه خواهند شد." FlowDirection="RightToLeft" HorizontalAlignment="Left" Margin="1,205,0,0" VerticalAlignment="Top" FontFamily="b nazanin" Width="1006" Height="43"/>
+        <Label Content="4. دام هایی که هم مرده اند هم فروش رفته اند هزینه شان تا یکی از دو روزی که مرده اند یا فروش رفته اند محاسبه خواهد شد. بر اساس اتفاقی که زودتر افتاده است." FlowDirection="RightToLeft" HorizontalAlignment="Left" Margin="1,253,0,0" VerticalAlignment="Top" FontFamily="b nazanin" Width="1006" Height="43"/>
+        <Label Content="5. مطمئن شوید ساعت وسیستم شما درست است تا در عملکرد برنامه اختلال پیش نیاید." FlowDirection="RightToLeft" HorizontalAlignment="Left" Margin="1,301,0,0" VerticalAlignment="Top" FontFamily="b nazanin" Width="1006" Height="43"/>
+        <Label Content="6.این نرم افزار از پایگاه داده SQL Server  مایکروسافت استفاده میکند. همیشه قبل از اجرای برنامه از اجرای سرویس آن با نام MSQLSERVER مطمئن شوید." FlowDirection="RightToLeft" HorizontalAlignment="Left" Margin="1,349,0,0" VerticalAlignment="Top" FontFamily="b nazanin" Width="1006" Height="43"/>
+        <Label Content="7. این نرم افزار بر روی  NET Framework 4.7.1 اجرا میشود. از نصب آن قبل از نصب برنامه اطمینان حاصل کنید." FlowDirection="RightToLeft" HorizontalAlignment="Left" Margin="1,397,0,0" VerticalAlignment="Top" FontFamily="b nazanin" Width="1006" Height="43"/>
+        <Label Content="8. سعی شده منوی راست کلیک کاملی تهیه گردد. با راست کلیک بروی سطری از پنجره ی داده ها از آنها استفاده کنید." FlowDirection="RightToLeft" HorizontalAlignment="Left" Margin="1,445,0,0" VerticalAlignment="Top" FontFamily="b nazanin" Width="1006" Height="43"/>
+    </Grid>
+</Window>
+
